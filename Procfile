@@ -1,2 +1,2 @@
-web: RUN_MODE=web bin/takhtit-bot
-worker: RUN_MODE=worker bin/takhtit-bot
+web: RUN_MODE=web bin/ethchess-bot-tewdros
+worker: RUN_MODE=worker bin/ethchess-bot-tewdros
