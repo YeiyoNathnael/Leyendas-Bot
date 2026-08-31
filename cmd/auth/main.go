@@ -46,9 +46,12 @@ func main() {
 	fmt.Println("==================================================")
 	fmt.Println("🔑 Google Calendar OAuth2 Authorization Generator")
 	fmt.Println("==================================================")
-	fmt.Println("\nPlease open the following URL in your browser:\n")
+	fmt.Println()
+	fmt.Println("Please open the following URL in your browser:")
+	fmt.Println()
 	fmt.Println(authURL)
-	fmt.Println("\nWaiting for authorization callback on " + redirectURL + " ...")
+	fmt.Println()
+	fmt.Println("Waiting for authorization callback on " + redirectURL + " ...")
 
 	codeChan := make(chan string)
 	server := &http.Server{Addr: ":8085"}
@@ -85,10 +88,14 @@ func main() {
 		log.Fatalf("Failed to exchange authorization code for token: %v", err)
 	}
 
-	fmt.Println("\n==================================================")
+	fmt.Println()
+	fmt.Println("==================================================")
 	fmt.Println("✅ SUCCESS! Refresh Token Generated")
 	fmt.Println("==================================================")
-	fmt.Println("\nAdd this line to your .env file:\n")
-	fmt.Printf("GOOGLE_REFRESH_TOKEN=%s\n\n", tok.RefreshToken)
+	fmt.Println()
+	fmt.Println("Add this line to your .env file:")
+	fmt.Println()
+	fmt.Printf("GOOGLE_REFRESH_TOKEN=%s\n", tok.RefreshToken)
+	fmt.Println()
 	fmt.Println("==================================================")
 }
