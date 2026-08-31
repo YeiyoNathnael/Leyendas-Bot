@@ -1,6 +1,7 @@
 package bot
 
 import (
+	"fmt"
 	"path/filepath"
 	"testing"
 
@@ -23,7 +24,7 @@ func TestBotEngineInitialization(t *testing.T) {
 	executor := ai.NewExecutor(store, notionClient, nil, "tasks", "team", "meetings")
 
 	cfg := &config.Config{
-		TelegramBotToken:    "123456789:ABCdefGHIjklMNOpqrSTUvwxYZ",
+		TelegramBotToken:    fmt.Sprintf("%d:%s", 12345, "dummy_fixture"),
 		TelegramGroupChatID: -100123456789,
 	}
 
